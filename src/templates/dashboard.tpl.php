@@ -15,16 +15,34 @@ include 'header.tpl.php';
         </aside>
 
         <div class="breadcrumb">
-            <div><a href="?url=home">Home</a></div>/<div><a href="?url=home">Dashboard</a></div>
+            <div><a href="?url=home">Home</a></div>/<div><a href="?url=dashboard">Dashboard</a></div>
         </div>
         <br>
         <section class='dashboard'>
-            <h2 id='welcome' >Welcome, recruit<?= $_SESSION['username'];  ?>!</h2>
+            <h2 id='welcome' >Welcome, recruit <?= $_SESSION['username'];  ?>!</h2>
 
-            <article>
-                <div class="overview"></div>
-                <div class="lists"></div>
-                <div class="tasks"></div>
+            <article class="tasklists">
+                <div class="overview"> 
+                    <h3>Overview</h3> 
+                
+                </div>
+                <div class="lists">
+                    <h3>Lists</h3>
+                    <div>
+
+                    </div>
+                    <br/>
+                    <a href="?url=createlist"><button type="submit" id="create_list">Create List</button></a>
+                    
+                </div>
+                <div class="tasks">
+                    <h3>Tasks</h3>
+                    <div>
+
+                    </div>
+                    <br/>
+                    <a href="?url=createtask"><button type="submit" id="create_task">Create Task</button></a>
+                </div>
             </article>
         </section>
 

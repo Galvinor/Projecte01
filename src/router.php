@@ -22,7 +22,14 @@ function getRoute():string{
             return 'badlogin';
         case 'logout':
             return 'logout';
-            case 'createlist':
+        case 'createlist':
+            return 'createlist';
+        case 'createlist_action':
+            return 'createlist_action';
+        case 'createtask':
+            return 'createtask';
+        case 'createtask_action':
+            return 'createtask_action';
         default:
             return 'home';
     }

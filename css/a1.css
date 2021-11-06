@@ -20,8 +20,8 @@ header{
 img.logo {
     width: 100px;
     height: 100px;
-    transform: rotate(1800deg);
-    transition: transform 5s;
+    /* transform: rotate(1800deg);
+    transition: transform 5s; */
 }
 
 img.logo:hover {
@@ -87,4 +87,19 @@ section.badlogin {
     align-items: center;
     flex-direction: column;
     gap: 40px;
+}
+
+article.tasklists {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    padding: 10px;
+}
+
+
+.overview,.lists,.tasks {
+    border: solid 2px;
+    width: 30%;
+    height: 300px;
+    padding: 20px;
 }

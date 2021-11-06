@@ -15,15 +15,16 @@ include 'header.tpl.php';
 
         </aside>
 
+        <div class="breadcrumb">
+            <div><a href="?url=home">Home</a></div>/<div><a href="?url=dashboard">Dashboard</a></div>/<div><a href="?url=createlist">List Creation</a></div>
+        </div>
+        <br>
+
         <main>
             <form action="?url=createlist_action" method="post">
-                <label for="list">Tasklist</label> <input type="text" name="list" placeholder="your tasklist to serve the emperor">
+                <label for="list">Create your tasklist to serve the emperor</label> <input type="text" name="list" placeholder="">
                 <button type="submit">Create</button>
             </form>
 
-            <form action="?url=createlist_action" method="post">
-                <label for="list">Tasks</label> <input type="text" name="task" placeholder="insert your imperial task">
-                <button type="submit">Create</button>
-            </form>
             
         </main>

@@ -15,7 +15,7 @@ function auth($db,$email,$pass):bool
                 $res=password_verify($pass,$user['passwd']);
                
                 if ($res){
-                $_SESSION['username']=$user['username'];
+                $_SESSION['username']=$user['userame'];
                 $_SESSION['email']=$user['email'];
            
                     return true;
@@ -30,7 +30,7 @@ function auth($db,$email,$pass):bool
         }
     }
 
-    function insert($db,$table,$usr,$pass,$email):bool 
+function insert($db,$table,$usr,$pass,$email):bool 
     {
        if ($usr!=null and $pass !=null and $email != null){
         $stmt= $db->prepare("INSERT INTO $table(userame,passwd,email) VALUES (?,?,?)");
@@ -44,3 +44,36 @@ function auth($db,$email,$pass):bool
             }
             return false;
         }
+
+function insertList($db, $table, $username, $list) {
+
+    if ($list!=null){
+        $stmt= $db->prepare("INSERT INTO $table(username,listname) VALUES (?,?)");
+            $stmt->bindParam(1,$username);
+            $stmt->bindParam(2,$list);
+            $stmt->execute([$username,$list]);
+            
+            
+            return true;
+            }
+            return false;
+
+
+}
+
+function insertTask($db, $table, $task, $list) {
+
+    if ($list!=null){
+        $stmt= $db->prepare("INSERT INTO $table(taskname,list) VALUES (?,?)");
+            $stmt->bindParam(1,$task);
+            $stmt->bindParam(2,$list);
+            $stmt->execute([$task,$list]);
+            
+            
+            return true;
+            }
+            return false;
+
+
+}
+    

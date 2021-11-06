@@ -4,17 +4,19 @@
     require APP.'/lib/conn.php';
     require APP.'/src/db/database.php';
 
-    $inList= filter_input(INPUT_POST, 'list');
+    $inTask= filter_input(INPUT_POST, 'task');
+    $uList= filter_input(INPUT_POST, 'list');
 
-    if ($inList != null) {
+    if ($inTask != null) {
 
     $gdb= getConnection($dsn, $dbuser, $dbpasswd);
 
     $user=$_SESSION['username'];
     
-    $table= 'LISTStest';
+    $table= 'TASKStest';
 
-    insertList($gdb,$table,$user,$inList);
+
+    insertTask($gdb,$table,$inTask,$uList);
 
     header("Location: ?url=dashboard");
     
