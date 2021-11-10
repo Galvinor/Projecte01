@@ -76,4 +76,42 @@ function insertTask($db, $table, $task, $list) {
 
 
 }
+
+function showList($db,$uname){
+    $stmt=$db->prepare('SELECT * FROM LISTS WHERE username=:username ');
+    $stmt->execute([':username'=>$uname]);
+    $count=$stmt->rowCount();
+    $row=$stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $_SESSION['userlists']=$count;
+
+    
+    if($count>=1){    
+        foreach($row as $fila){
+            for ($i=0;$i<$count;$i++) {
+                echo $fila[$i][1];
+                
+            }
+        }   
+    }
+}
+
+function showTask($db,$ulist){
+    $stmt=$db->prepare('SELECT * FROM TASKS WHERE list=:list ');
+    $stmt->execute([':list'=>$ulist]);
+    $count=$stmt->rowCount();
+    $row=$stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $_SESSION['usertasks']=$count;
+
+    
+    if($count>=1){    
+        foreach($row as $fila){
+            for ($i=0;$i<$count;$i++) {
+                echo $fila[$i][0];
+                
+            }
+        }   
+    }
+}
     

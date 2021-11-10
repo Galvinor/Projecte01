@@ -1,6 +1,6 @@
 <?php
 
-ini_set('display_errors','On');
+//ini_set('display_errors','On');
 session_start();
 require 'vendor/autoload.php';
 //access .env

@@ -24,6 +24,7 @@ include 'header.tpl.php';
             <form action="?url=createtask_action" method="post">
                 <label for="list">Select your list</label>
                 <select name="list">
+                    <option value=""></option>
                     <option value="list">Volvo</option>
                     <option value="saab">Saab</option>
                     <option value="opel">Opel</option>

@@ -12,7 +12,7 @@
 
     $user=$_SESSION['username'];
     
-    $table= 'LISTStest';
+    $table= 'LISTS';
 
     insertList($gdb,$table,$user,$inList);
 

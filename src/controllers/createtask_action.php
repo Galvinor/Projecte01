@@ -7,13 +7,13 @@
     $inTask= filter_input(INPUT_POST, 'task');
     $uList= filter_input(INPUT_POST, 'list');
 
-    if ($inTask != null) {
+    if ($inTask != null and $uList != null) {
 
     $gdb= getConnection($dsn, $dbuser, $dbpasswd);
 
     $user=$_SESSION['username'];
     
-    $table= 'TASKStest';
+    $table= 'TASKS';
 
 
     insertTask($gdb,$table,$inTask,$uList);

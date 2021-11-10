@@ -1,5 +1,12 @@
 <?php
+require APP.'/lib/conn.php';
+require APP.'/src/db/database.php';
+$gdb= getConnection($dsn, $dbuser, $dbpasswd);
+$uname=$_SESSION['username'];
+$ulist= "opel";
 include 'header.tpl.php';
+
+    
 ?>
             <ul>
                 <li>
@@ -29,7 +36,7 @@ include 'header.tpl.php';
                 <div class="lists">
                     <h3>Lists</h3>
                     <div>
-
+                        <?= showList($gdb,$uname) ?>
                     </div>
                     <br/>
                     <a href="?url=createlist"><button type="submit" id="create_list">Create List</button></a>
@@ -38,7 +45,7 @@ include 'header.tpl.php';
                 <div class="tasks">
                     <h3>Tasks</h3>
                     <div>
-
+                    <?= showTask($gdb,$ulist) ?>
                     </div>
                     <br/>
                     <a href="?url=createtask"><button type="submit" id="create_task">Create Task</button></a>
